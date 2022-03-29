@@ -8,9 +8,8 @@ AzureKeyCredential credential = new AzureKeyCredential(key);
 DocumentAnalysisClient client = new DocumentAnalysisClient(new Uri(endpoint), credential);
 
 //sample invoice document
-var uri = new System.Uri("C:\\Users\\mwambugu\\source\\repos\\formRecognizer_quickstart\\formRecognizer_quickstart\\SampleDocs\\IMG_20220328_211640.jpg");
-Uri invoiceUri = uri.AbsoluteUri;
 
+Uri invoiceUri = new Uri("https://github.com/martinwambugu/formRecognizer_quickstart/blob/132fd42466f4b9d9e032a9ef4aaa3a1c771e17fd/formRecognizer_quickstart/SampleDocs/sample_OCR_Image.jpg");
 AnalyzeDocumentOperation operation = await client.StartAnalyzeDocumentFromUriAsync("prebuilt-invoice", 
     invoiceUri);
 
